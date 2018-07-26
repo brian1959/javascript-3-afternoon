@@ -21,7 +21,10 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 //Code Here
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+let evenNumbers = mixedNumbers.filter(function(el){
+  return el%2===0
+}
+/* Provide Your Callback Here */)
 
 
 
@@ -32,11 +35,12 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 // Do not edit the code above.
 
 /*
-  Use the map method on the prices array to calculate a new array of post-tax prices.
-  Use a 7% tax rate.
+  Use the map method on the prices array to calculate a new array
+   of post-tax prices.   Use a 7% tax rate.
 
-  Math reminder! To calculate the price after tax, multiply the price by 1 plus the taxRate as a decimal.
-  Example: if tax is 7%, the price afterTax could be calculated like this: afterTax = price * 1.07) 
+  Math reminder! To calculate the price after tax, multiply the price
+   by 1 plus the taxRate as a decimal.  Example: if tax is 7%, the
+   price afterTax could be calculated like this: afterTax = price * 1.07) 
 
   The map function also takes a callback with the parameters
   function(element, index, wholeArray){}  Function Form
@@ -44,7 +48,9 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 //Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices = prices.map(function (el, index,array){
+  return el*1.07
+});
 
 
 
@@ -55,15 +61,18 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 // Do not edit the code above.
 
 /*
-  Use the reduce method to calculate the sum of all the populations in the array.
-
-  The reduce function has a slightly different setup for it's callback.
-  function(runningTotal, curElement, curIndex, wholeArray){} Function Form
-  (runningTotal, curElement, curIndex, wholeArray)=>{} Arrow Form
+  Use the reduce method to calculate the sum of all the populations
+   in the array.  The reduce function has a slightly different
+   setup for it's callback.   function(runningTotal, curElement,
+     curIndex, wholeArray){} Function Form (runningTotal, curElement, 
+      curIndex, wholeArray)=>{} Arrow Form
 */
 
 //Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation = populations.reduce(function(sum,el){
+  sum = sum + el
+  return sum
+})
 
 
 
@@ -89,7 +98,9 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+let myStrongest = monstersInYourPocket.filter(function(obj){
+  return obj.CP>200
+})
 
 
 
@@ -106,7 +117,19 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a higher order method to get the sum of all the order totals after adding in the sales tax
 */
 
-let ordersTotal //Code Here
+let ordersTotal = orders.map((ordertt) =>{
+  ordertt.price + ordertt.tax;
+  return ordertt
+})
+
+
+
+
+
+
+
+
+9
 
 
 
@@ -126,6 +149,6 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
-
+let bobsTotal = purchases.filter((person) => person.owner === 'Bob').reduce((total,thing) => total + thing.price, 0)
+bobsTotal
 
