@@ -164,13 +164,12 @@ var deleteTheBigNumbers = {
    the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-function deleteTheBigNumbers(obj){
-  for(var name1 in obj){
-    if(obj[name1]>100){
-      delete obj.name1
+  for(var key in deleteTheBigNumbers){
+    if(deleteTheBigNumbers[key]>100){
+      delete deleteTheBigNumbers[key]
     }
   }
-}
+
 
 
 
@@ -186,10 +185,12 @@ function deleteTheBigNumbers(obj){
 
 function startsWithK(obj){
   for(var key in obj){
-    if(key.charAt(0)==='K'){
-      delete obj.key
+    let firstletter = key.charAt(0)
+    if(firstletter.toLowerCase() ==='k'){
+      delete obj[key]
     }
-  }return obj
+  }
+  return obj
 }
 
 
@@ -206,10 +207,13 @@ function startsWithK(obj){
   (hint: the method includes() may be of use...)
 */
 
-function hiddenTreasure(obj){
-for(var key in obj){
-
+let hiddenTreasure = obj =>{
+  for(let key in obj){
+    let treasure = 'treasure'
+  if(!obj[key].includes(treasure)){
+    delete obj[key]
+  }
 }
-
+return obj
 }
 

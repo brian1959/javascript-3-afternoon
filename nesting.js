@@ -44,13 +44,19 @@ var employees = [
 // Do not edit the code above.
 
 /*
-  Create a function called 'employeeUpdater' that takes no parameters. employeeUpdater will loop over the array above and perform the following:
-    1. If employee's first name is Theo, remove that employee because he just got fired.
-    2. If the employee's first name is Lorie, change her department to 'HR'.
+  Create a function called 'employeeUpdater' that takes no parameters.
+   employeeUpdater will loop over the array above and perform the
+    following:
+    1. If employee's first name is Theo, remove that employee because
+     he just got fired.
+    2. If the employee's first name is Lorie, change her department
+     to 'HR'.
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater(){
+
+}
 
 
 
@@ -68,7 +74,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(arrAcc){
+  for(let i = 0;i<arrAcc.length;i++){
+    for(let j = arrAcc.length -1;j>i;j--){
+      if(arrAcc[i] === arrAcc[j]){
+        arrAcc.splice(j,1)
+      }
+    }
+  }return arrAcc
+}
 
 
 
@@ -95,10 +109,9 @@ var cat = {
     1. Assign the value of Grumpy's 2nd activity to the grumpyActivity variable below.
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
-
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+ var grumpyActivity = cat.catFriends[0].activities[1];
+     
+ var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -130,15 +143,18 @@ var myCar = {
 // Do not edit the code above.
 
 /*
-  Above is some information about my car. As you can see, I am not the best driver.
-  I have caused a few accidents.
-  Please update this driving record so that I can feel better about my driving skills.
+  Above is some information about my car. As you can see,
+   I am not the best driver.  I have caused a few accidents.
+  Please update this driving record so that I can feel better 
+  about my driving skills.
     1. Write a function called recordCleaner.
     2. Loop over the accidents array.
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(objCar){
+  
+}
 
 
 
